@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import sympy as sp
-import symbolic as sb
-from symbolic.abc import phi, theta
 import mechkit
+import planarfibers
+
+phi, theta = sp.symbols("phi theta")
 
 
 class PlanarStiffnesProjector:
@@ -12,7 +13,6 @@ class PlanarStiffnesProjector:
         # Planar
 
         self.converter = mechkit.notation.Converter()
-        converter_sym = sb.notation.Converter()
 
         vec = sp.Array(
             [sp.sin(theta) * sp.cos(phi), sp.sin(theta) * sp.sin(phi), sp.cos(theta)]
@@ -23,8 +23,8 @@ class PlanarStiffnesProjector:
             second_moment_tensor, second_moment_tensor
         )
 
-        second_moment = converter_sym.to_mandel6(second_moment_tensor)
-        fourth_moment = converter_sym.to_mandel6(fourth_moment_tensor)
+        second_moment = planarfibers.notation.second_to_mandel6(second_moment_tensor)
+        fourth_moment = planarfibers.notation.fourth_to_mandel6(fourth_moment_tensor)
 
         self.get_second = sp.lambdify([phi], second_moment)
         self.get_fourth = sp.lambdify([phi], fourth_moment)
@@ -56,7 +56,6 @@ if __name__ == "__main__":
     df = planarfibers.discretization.get_points_on_slices()
     ###############################
     # Get stiffness
-
 
     ###############################
     # Project

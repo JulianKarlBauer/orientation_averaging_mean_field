@@ -15,3 +15,6 @@ def inp_material_parameters():
 
 from . import discretization
 from . import approximation
+from . import notation
+from . import utils
+from . import averager
