@@ -77,7 +77,7 @@ def points_view00(la0s, radius_almost):
         },
     }
     if one_is_on_board:
-        tmp["ud"] = {
+        tmp[f"v00-mid-{nbr_la0s}"] = {
             "la0": la0s[-1],
             "radius_factor": zero,
             "beta": zero,
