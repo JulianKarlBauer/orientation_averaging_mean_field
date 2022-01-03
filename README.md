@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/JulianKarlBauer/planar_fiber_orientation_distributions">
-  <img alt="PlanarFibers" src="logo/logo.png" width="20%">
+  <img alt="PlanarFibers" src="logo/logo.png" width="40%">
   </a>
 </p>
 
