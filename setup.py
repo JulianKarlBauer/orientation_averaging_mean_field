@@ -19,6 +19,8 @@ setuptools.setup(
         "sympy",
         "pandas",
         "matplotlib",  # Required for examples
+        "mechmean",
+        "mechkit",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
