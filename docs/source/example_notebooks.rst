@@ -7,6 +7,7 @@ Example Notebooks
 
    notebooks/01
    notebooks/02
+   notebooks/03
 
 
 
