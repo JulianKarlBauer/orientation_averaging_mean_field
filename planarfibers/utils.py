@@ -26,8 +26,8 @@ class PlanarStiffnesProjector:
         second_moment = planarfibers.notation.second_to_mandel6(second_moment_tensor)
         fourth_moment = planarfibers.notation.fourth_to_mandel6(fourth_moment_tensor)
 
-        self.get_second = sp.lambdify([phi], second_moment)
-        self.get_fourth = sp.lambdify([phi], fourth_moment)
+        self.get_second = sp.lambdify([phi], sp.Matrix(second_moment))
+        self.get_fourth = sp.lambdify([phi], sp.Matrix(fourth_moment))
         self.identity_2 = self.converter.to_mandel6(mechkit.tensors.Basic().I2)
 
     def get_planar_E_K(self, stiffness, angles):
