@@ -28,6 +28,7 @@ setuptools.setup(
         "matplotlib",  # Required for examples
         "mechmean",
         "mechkit",
+        "vofotensors",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
