@@ -84,6 +84,6 @@ is gratefully acknowledged.
 
 [url_read_the_docs_latest]: https://planarfibers.readthedocs.io/en/latest/
 [url_read_the_docs_latest_notebooks]: https://planarfibers.readthedocs.io/en/latest/source/example_notebooks.html
-[url_docs_source_notebooks]: https://github.com/JulianKarlBauer/planarfibers/tree/master/docs/source/notebooks
+[url_docs_source_notebooks]: https://github.com/JulianKarlBauer/orientation_averaging_mean_field/tree/main/docs/source/notebooks
 
 [url_pypi_this_package]: https://pypi.org/project/planarfibers/
