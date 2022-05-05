@@ -13,6 +13,7 @@ class PlanarStiffnesProjector:
         # Planar
 
         self.converter = mechkit.notation.Converter()
+        self.converter_symbolic = mechkit.notation.ConverterSymbolic()
 
         vec = sp.Array(
             [sp.sin(theta) * sp.cos(phi), sp.sin(theta) * sp.sin(phi), sp.cos(theta)]
@@ -23,8 +24,8 @@ class PlanarStiffnesProjector:
             second_moment_tensor, second_moment_tensor
         )
 
-        second_moment = planarfibers.notation.second_to_mandel6(second_moment_tensor)
-        fourth_moment = planarfibers.notation.fourth_to_mandel6(fourth_moment_tensor)
+        second_moment = self.converter_symbolic.to_mandel6(second_moment_tensor)
+        fourth_moment = self.converter_symbolic.to_mandel6(fourth_moment_tensor)
 
         self.get_second = sp.lambdify([phi], sp.Matrix(second_moment))
         self.get_fourth = sp.lambdify([phi], sp.Matrix(fourth_moment))
