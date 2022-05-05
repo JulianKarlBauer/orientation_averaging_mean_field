@@ -7,7 +7,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 setuptools.setup(
     name="planarfibers",
-    version="0.0.1",
+    version="0.0.2",
     author="Julian Karl Bauer",
     author_email="juliankarlbauer@gmx.de",
     description="PlanarFibers "
