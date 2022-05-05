@@ -41,7 +41,7 @@ def calc_MTOA(N4, inp=None):
         "averaging_func": averager.average,
     }
 
-    MTOA = mechmean.approximation.MoriTanakaOrientationAveraged(**inp_MT)
+    MTOA = mechmean.approximation.MoriTanakaOrientationAveragedBenveniste(**inp_MT)
 
     return MTOA.calc_C_eff()
 
