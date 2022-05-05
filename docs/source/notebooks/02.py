@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# # Homogenize for representative N4 in slices of parameter space
 
 import planarfibers
 import matplotlib.pyplot as plt
@@ -13,51 +12,37 @@ import numpy as np
 pd.set_option("display.max_columns", 100)
 pd.set_option("display.width", 1000)
 
-############################################
-
+# User input
 SCALE_HOMOGENEOUS = False
 key_quantity = "E_modulus"
 homogenization_function = planarfibers.approximation.calc_MTOA
 la1_values = ["3 / 6", "4 / 6", "5 / 6"]
 
-############################################
 # Get points on views
-
 df = planarfibers.discretization.get_points_on_slices(
     radii=["0", "1/2", "9/10"],
     la1s=list(map(eval, la1_values)) + ["1"],
     numeric=True,
 )
 
-############################################
 # Get fiber orientation tensors
-
-
 parameterizations = vofotensors.fabric_tensors.N4s_parametric
 parameterization = parameterizations["planar"]["la1_d1_d8"]
-
 N4_func = sp.lambdify([la1, d1, d8], parameterization)
-
 df["N4"] = df.apply(
     lambda row: N4_func(la1=row["la1"], d1=row["d_1"], d8=row["d_8"]), axis=1
 )
 
-################################################
 # Define angle discretization
-
 angles = np.linspace(0, 2 * np.pi, 120)
 
-################################################
 # Homogenize
-
 df["stiffness"] = df.apply(
     lambda row: homogenization_function(N4=row["N4"], inp=None),
     axis=1,
 )
 
-################################################
-# Get Youngs-Modulus for direction in plane
-
+# Define helper func to explicitly select either Youngs or generalized compression mod.
 def get_Youngs_modulus(stiffness, angles):
     projector = planarfibers.utils.PlanarStiffnesProjector()
     E, K = projector.get_planar_E_K(stiffness=stiffness, angles=angles)
@@ -67,22 +52,20 @@ def get_Youngs_modulus(stiffness, angles):
         return K
 
 
+# Get Youngs-Modulus for direction in plane
 df[key_quantity] = df.apply(
     lambda row: get_Youngs_modulus(stiffness=row["stiffness"], angles=angles),
     axis=1,
 )
 
 
-################################################
-# Layout
+# Define layout
 la1_key_extensions = {f"-la1-{index}": value for index, value in enumerate(la1_values)}
-
 # la1_key_extensions = {
 # "-la1-0": "3 / 6",
 # "-la1-1": "4 / 6",
 # "-la1-2": "5 / 6",
 # }
-
 grid_indices = {
     "vshc-central": (2, 0),
     "vshc-m90-0": (3, 0),
@@ -99,7 +82,7 @@ grid_indices = {
 legend_axis_indices = (4, 1)
 empty_axes_indices = [(0, 1), (1, 2), (3, 2), legend_axis_indices]
 
-################################################
+# Plot first view
 nbr_slices = len(la1_key_extensions)
 fig = plt.figure(figsize=(6 * nbr_slices, 10))
 subfigs = fig.subfigures(1, nbr_slices, wspace=0.0)
@@ -136,9 +119,8 @@ for index, (key_extension, la1val) in enumerate(la1_key_extensions.items()):
         ax.axis("off")
 fig.tight_layout()
 
-################################################
-# Layout view on orthotropic points
 
+# Define layout second view
 grid_indices = {
     "v00-upper-0": (0, 0),
     "v00-upper-1": (0, 1),
@@ -158,8 +140,7 @@ grid_indices = {
 legend_axis_indices = (0, 3)
 empty_axes_indices = [(2, 3), legend_axis_indices]
 
-################################################
-
+# Plot second dview
 fig, axs = plt.subplots(
     figsize=(12, 9), ncols=4, nrows=3, subplot_kw={"projection": "polar"}
 )
