@@ -1,0 +1,232 @@
+\documentclass[tikz, border=1mm]{standalone}
+% \usepackage[mode=buildnew]{standalone}% requires -shell-escape
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta,decorations.markings}
+\usepgfplotslibrary{fillbetween}
+
+\tikzset{myarrowhead/.style={decoration={markings,mark=at position 1 with %
+{\arrow[scale=1.,>={Triangle[length=8pt, width=7pt]}]{>}}},postaction={decorate}}}
+
+\DeclareUnicodeCharacter{2212}{−}
+\usepgfplotslibrary{groupplots,dateplot}
+\usepgfplotslibrary{polar}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns,shapes.arrows}
+\pgfplotsset{compat=newest}
+
+% Font
+\usepackage{arev}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pgfmathsetmacro{\marksize}{3}
+\pgfmathsetmacro{\mylinewidth}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\pgfmathsetmacro{\partofmaxradius}{9/10}
+
+\pgfmathsetmacro{\base}{-4.0/35.0}
+\pgfmathsetmacro{\costoonehalfofheight}{0.86602540378443864676372317075}
+\tikzset{declare function={upperboundofd1(\la)=-4/35+\la-\la^2;}}
+\tikzset{declare function={radiusadmissible(\la)=(upperboundofd1(\la)-\base)/2;}}
+\tikzset{declare function={radiusadmissiblepoints(\la)=radiusadmissible(\la)*\partofmaxradius;}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfplotsset{
+	pointsinoverviews/.style={%
+			thick, mark=*, mark size=3, mark options={solid}, only marks,
+		}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\colorlet{ctop}{green}
+\colorlet{ccenter}{blue}
+\colorlet{cbottom}{red}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		width=0.9\linewidth,
+		view={12}{10},
+		hide axis,
+		xmin=0.5, xmax=1.05,
+		ymin=0, ymax=0.15,
+		zmin=-0.115, zmax=0.15,
+		y dir=reverse,
+		]
+
+	% ###########################
+		% Orthotropic plane admissible with colored boundaries
+
+		\addplot3[black!60!white, name path = upper, domain=1/2:1, y domain = 0:0,
+ 				line width=1.pt]
+		(
+		{x},
+		{0},
+		{radiusadmissible(x)}
+		);
+
+		\addplot3[black!60!white, name path = lower, domain=1/2:1, y domain = 0:0, line width=1.pt]
+		(
+		{x},
+		{0},
+		{-radiusadmissible(x)}
+		);
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Vertical lines
+
+		\addplot3 [black!60!white,
+ 			mark=none,
+			domain=-radiusadmissible(3/6):radiusadmissible(3/6),
+			samples=60,samples y=0,
+			line width=\mylinewidth,
+			name path = zerothvertical
+		]
+		(
+		{1/2},
+		{0},
+		{x}
+		);
+
+		\addplot3 [black!60!white, mark=none,
+			domain=-radiusadmissible(4/6):radiusadmissible(4/6),
+			samples=60,samples y=0,
+			line width=\mylinewidth
+		]
+		(
+		{4/6},
+		{0},
+		{x}
+		);
+
+		\addplot3 [black!60!white, mark=none,
+			domain=-radiusadmissible(5/6):radiusadmissible(5/6),
+			samples=60,samples y=0,
+			line width=\mylinewidth
+		]
+		(
+		{5/6},
+		{0},
+		{x}
+		);
+
+
+		% ###########################
+		% Half circles admissible
+
+		\addplot3 [black!60!white, name path = zerothcircle, mark=none, domain=0:180,samples=60, samples y=0, line width=\mylinewidth]
+		(
+		{1/2},
+		{radiusadmissible(1/2)*sin(x)},
+		{radiusadmissible(1/2)*cos(x)}
+		);
+
+		\addplot3 [black!60!white, mark=none, domain=0:180,samples=60, samples y=0, line width=\mylinewidth]
+		(
+		{4/6},
+		{radiusadmissible(4/6)*sin(x)},
+		{radiusadmissible(4/6)*cos(x)}
+		);
+
+		\addplot3 [black!60!white, mark=none, domain=0:180,samples=60, samples y=0, line width=\mylinewidth]
+		(
+		{5/6},
+		{radiusadmissible(5/6)*sin(x)},
+		{radiusadmissible(5/6)*cos(x)}
+		);
+
+		% ###########################
+		% Fill
+
+		% between zeroth circle and z-axis
+		\addplot [black, opacity= 0.3, draw = none]
+		fill between[of = zerothvertical and zerothcircle, reverse = true];
+
+		\addplot [black, opacity = 0.3, draw = none]
+		fill between[of = upper and lower, reverse = true];
+
+		% ###########################
+		% Points paths
+
+		\addplot3[ctop, domain=1/2:5/6, y domain = 0:0,
+			line width=\mylinewidth]
+		(
+		{x},
+		{0},
+		{radiusadmissiblepoints(x)}
+		);
+
+		\addplot3[ccenter, domain=1/2:1, y domain = 0:0,
+			line width=\mylinewidth]
+		(
+		{x},
+		{0},
+		{0}
+		);
+
+		\addplot3[cbottom, domain=1/2:5/6, y domain = 0:0,
+			line width=\mylinewidth]
+		(
+		{x},
+		{0},
+		{-radiusadmissiblepoints(x)}
+		);
+
+
+
+		% middle
+		\addplot3[ccenter,
+				pointsinoverviews,
+				domain=1/2:1,
+				samples=4,
+				line width=1.pt
+				]
+		(
+		{x},
+		{0},
+		{0}
+		);
+
+		% top
+		\addplot3[ctop,
+				pointsinoverviews,
+				domain=1/2:5/6,
+				samples=3,
+				line width=1.pt
+				]
+		(
+		{x},
+		{0},
+		{radiusadmissiblepoints(x)}
+		);
+
+		% bottom
+		\addplot3 [cbottom,
+				pointsinoverviews,
+				domain=1/2:5/6,
+				samples=3,
+				line width=1.pt
+				]
+		(
+		{x},
+		{0},
+		{-radiusadmissiblepoints(x)}
+		);
+
+
+
+
+	\end{axis}
+\end{tikzpicture}
+
+
+
+\end{document}
