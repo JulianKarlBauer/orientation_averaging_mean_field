@@ -29,10 +29,11 @@ preferred-citation:
         email: thomas.boehlke@kit.edu
         affiliation: Karlsruhe Institute of Technology
         orcid: 'https://orcid.org/0000-0001-6884-0530'
-    title: >-
-      On the dependence of orientation averaging mean
-      field homogenization on planar fourth-order fiber
-      orientation tensors
+    journal: "Mechanics of Materials"
+    title: "On the dependence of orientation averaging mean field homogenization on planar fourth-order fiber orientation tensors"
+    start: 104307
+    volume: 170
+    year: 2022
     identifiers:
       - type: doi
         value: 10.1016/j.mechmat.2022.104307
@@ -45,7 +46,4 @@ preferred-citation:
       - Fiber reinforced composites
       - Closure approximation
     license: CC-BY-4.0
-    journal: "Journal Title"
-    start: 104307
-    volume: 170
-    year: 2022
+
