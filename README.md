@@ -68,5 +68,5 @@ The support by the [German Research Foundation (DFG)][dfg_website] is gratefully
 [url_env_conda]: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
 [url_read_the_docs_latest]: https://planarfibers.readthedocs.io/en/latest/
-[url_read_the_docs_latest_notebooks]: ??
+[url_read_the_docs_latest_notebooks]: https://planarfibers.readthedocs.io/en/latest/source/example_notebooks.html
 [url_pypi_this_package]: https://pypi.org/project/planarfibers/0.0.1/
