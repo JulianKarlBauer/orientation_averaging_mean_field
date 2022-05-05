@@ -9,35 +9,35 @@ base = sp.sympify("-4 / 35")
 pi = sp.pi
 
 
-def radius_circle_d7_d1_plane(la0):
+def radius_circle_d8_d1_plane(la0):
     return (la0 - la0 ** sp.S(2)) / sp.S(2)
 
 
 def r_max(la0):
-    return radius_circle_d7_d1_plane(la0)
+    return radius_circle_d8_d1_plane(la0)
 
 
 def get_d_1(radius_factor, beta, la0):
-    radius = radius_circle_d7_d1_plane(la0)
+    radius = radius_circle_d8_d1_plane(la0)
     return radius_factor * radius * sp.sin(beta) + radius + base
 
 
-def get_d_7(radius_factor, beta, la0):
-    radius = radius_circle_d7_d1_plane(la0)
+def get_d_8(radius_factor, beta, la0):
+    radius = radius_circle_d8_d1_plane(la0)
     return radius_factor * radius * sp.cos(beta)
 
 
 def d1_hat_by_la0_d1(la0, d1):
-    return d1 - base - radius_circle_d7_d1_plane(la0)
+    return d1 - base - radius_circle_d8_d1_plane(la0)
 
 
-def r_by_la0_d1_d7(la0, d1, d7):
+def r_by_la0_d1_d8(la0, d1, d8):
     d1_hat = d1_hat_by_la0_d1(la0=la0, d1=d1)
-    return sp.sqrt(d1_hat ** sp.S(2) + d7 ** sp.S(2))
+    return sp.sqrt(d1_hat ** sp.S(2) + d8 ** sp.S(2))
 
 
-def beta_by_la0_d1_d7(la0, d1, d7):
-    return sp.atan2(d1_hat_by_la0_d1(la0=la0, d1=d1), d7)
+def beta_by_la0_d1_d8(la0, d1, d8):
+    return sp.atan2(d1_hat_by_la0_d1(la0=la0, d1=d1), d8)
 
 
 def points_view00(la0s, radius_almost):
@@ -147,9 +147,9 @@ def get_points_on_slices(
         axis=1,
     )
 
-    df["d_7"] = df.apply(
+    df["d_8"] = df.apply(
         lambda row: sp.simplify(
-            get_d_7(
+            get_d_8(
                 radius_factor=row["radius_factor"], beta=row["beta"], la0=row["la0"]
             )
         ),
