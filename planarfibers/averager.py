@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import numpy as np
-import scipy
+import scipy.spatial
 import mechkit
 
 ORDER = 180
@@ -50,8 +50,8 @@ class AveragerPlanar:
 
     def average(self, inp):
         rotations = self._get_rotation(angles=self.angles)
-        tensor = converter.to_tensor(inp)
+        tensor = self.converter.to_tensor(inp)
         rotated = self._rotate(quantity=tensor, rotations=rotations)
         averaged = self._average(rotated)
-        mandel = converter.to_mandel6(averaged)
+        mandel = self.converter.to_mandel6(averaged)
         return mandel
