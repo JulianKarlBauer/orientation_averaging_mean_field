@@ -1,8 +1,8 @@
-pybtex
-sphinxcontrib-bibtex
-numpydoc
 ipykernel
 nbsphinx
 sympy
 mechkit
+mechmean
+pandas
+numpy
 matplotlib

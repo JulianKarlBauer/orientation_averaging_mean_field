@@ -37,19 +37,13 @@ sys.path.insert(
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.todo",
-    "sphinx.ext.coverage",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
-    "sphinx.ext.napoleon",
     "nbsphinx",
     # 'sphinx.ext.autosummary',
     # 'numpydoc',
 ]
 
-
-napoleon_custom_sections = ["Limitations"]  # , 'Returns']
 
 # -- Project information -----------------------------------------------------
 
