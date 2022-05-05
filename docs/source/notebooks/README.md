@@ -9,4 +9,4 @@ Both scripts and notebooks are version controlled.
 Please use what you like better.
 The examples can, e.g., be run online in notebook format [here with binder][url_binder].
 
-[url_binder]: https://mybinder.org/v2/gh/JulianKarlBauer/orientation_averaged_mean_field_private/HEAD
+[url_binder]: https://mybinder.org/v2/gh/JulianKarlBauer/mechmean/HEAD

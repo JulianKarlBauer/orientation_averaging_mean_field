@@ -1,6 +1,7 @@
+[![PyPI version](https://badge.fury.io/py/mechmean.svg)][url_pypi_this_package]
+[![Documentation status](https://readthedocs.org/projects/mechmean/badge/?version=latest)][url_read_the_docs_latest]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/440932364.svg)][url_latest_doi]
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JulianKarlBauer/planar_fiber_orientation_distributions/HEAD)
 
@@ -47,7 +48,9 @@ Note: [Develop vs. install](https://stackoverflow.com/a/19048754/8935243)
 
 ## Examples
 
-Both example notebooks and example scripts are given [here](examples/).
+## Examples
+
+Both example notebooks and example scripts are rendered [here][url_read_the_docs_latest_notebooks] and given as source [here](docs/source/notebooks).
 
 ## Acknowledgment
 
@@ -65,3 +68,7 @@ The support by the [German Research Foundation (DFG)][dfg_website] is gratefully
 
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
 [url_env_conda]: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+[url_read_the_docs_latest]: https://planarfibers.readthedocs.io/en/latest/
+[url_read_the_docs_latest_notebooks]: ??
+[url_pypi_this_package]: https://pypi.org/project/planarfibers/0.0.1/

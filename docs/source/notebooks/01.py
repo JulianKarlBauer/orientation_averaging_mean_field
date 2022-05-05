@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# # Get points witin admissible parameter space
 
 import planarfibers
 import pandas as pd
