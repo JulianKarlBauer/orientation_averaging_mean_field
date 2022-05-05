@@ -1,4 +1,9 @@
 import setuptools
+from os import path
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
+    long_description = f.read()
 
 setuptools.setup(
     name="planarfibers",
@@ -7,10 +12,12 @@ setuptools.setup(
     author_email="juliankarlbauer@gmx.de",
     description="PlanarFibers "
     "contains selected contributions of "
-    "Bauer JK, Böhlke T. ?? "
-    "Mathematics and Mechanics of Solids. Month? YYYY?. "
-    "doi:??",
-    url="https://github.com/JulianKarlBauer/planar_fiber_orientation_tensors_2021",
+    "Bauer, Julian Karl, and Thomas Böhlke. "
+    "'On the dependence of orientation averaging mean field homogenization on planar fourth-order fiber orientation tensors.'"
+    " Mechanics of Materials (2022): 104307.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/JulianKarlBauer/orientation_averaging_mean_field",
     packages=["planarfibers"],
     package_dir={"planarfibers": "planarfibers"},
     install_requires=[
@@ -27,3 +34,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
 )
+
+
