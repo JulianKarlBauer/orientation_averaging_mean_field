@@ -37,6 +37,17 @@ and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_la
 
 ## Installation
 
+### Install directly from github
+```
+python -m pip install git+https://github.com/JulianKarlBauer/orientation_averaging_mean_field.git
+```
+
+### Install from [![PyPI](https://badge.fury.io/py/planarfibers.svg)][url_pypi_this_package]
+```bash
+pip install planarfibers
+```
+
+### Install from local clone
 - [Clone][url_how_to_clone] this repository to your machine
 - Open a terminal and navigate to your local clone
 - Install the package from the local clone into the current [env][url_env_python]i[ronment][url_env_conda] in develop mode:
