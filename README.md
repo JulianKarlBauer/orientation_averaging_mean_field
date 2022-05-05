@@ -16,16 +16,23 @@ This repository contains a Python package called `planarfibers`
 which contains selected contributions of the paper
 
 ```bibtex
-@article{insertdoihere,
-	author = {Julian Karl Bauer and Thomas Böhlke},
-	title ={Fiber orientation distributions based on planar fiber orientation tensors of fourth order},
-	journal = {Mathematics and Mechanics of Solids},
+@article{BauerBoehlke2022,
+    author = {Julian Karl Bauer and Thomas Böhlke},
+    title = {On the dependence of orientation averaging mean field homogenization on planar fourth-order fiber orientation tensors},
+    journal = {Mechanics of Materials},
+    volume = {170},
+    pages = {104307},
+    year = {2022},
+    issn = {0167-6636},
+    doi = {https://doi.org/10.1016/j.mechmat.2022.104307},
+    url = {https://www.sciencedirect.com/science/article/pii/S0167663622000886},
+    keywords = {Fiber orientation tensor, Anisotropy, Elasticity, Small strain, Mean field homogenization, Fiber reinforced composites, Closure approximation},
 }
 ```
 
 Please see [license][url_license],
 [acknowledgment](#acknowledgment)
-and cite the [paper given above][url_mms_article] and the latest [Zenodo-DOI][url_latest_doi].
+and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_latest_doi].
 
 ## Installation
 
@@ -52,8 +59,8 @@ The support by the [German Research Foundation (DFG)][dfg_website] is gratefully
 [dfg_website]: https://www.dfg.de/
 
 [url_license]: LICENSE
-[url_latest_doi]: ??
-[url_mms_article]: ??
+[url_latest_doi]:
+[url_article]: https://doi.org/10.1016/j.mechmat.2022.104307
 [url_how_to_clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
