@@ -1,9 +1,51 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: >-
+  Please cite this software using the metadata from
+  'preferred-citation'.
 authors:
-- family-names: "Bauer"
-  given-names: "Julian Karl"
-  orcid: "https://orcid.org/0000-0002-4931-5869"
-title: "planarfibers"
-doi: 10.5281/zenodo.6520335
-url: "https://github.com/JulianKarlBauer/orientation_averaging_mean_field"
+  - given-names: Julian Karl
+    family-names: Bauer
+    email: juliankarlbauer@gmx.de
+    affiliation: Karlsruhe Institute of Technology
+    orcid: 'https://orcid.org/0000-0002-4931-5869'
+  - given-names: Thomas
+    family-names: Böhlke
+    email: thomas.boehlke@kit.edu
+    affiliation: Karlsruhe Institute of Technology
+    orcid: 'https://orcid.org/0000-0001-6884-0530'
+repository-code: >-
+    https://github.com/JulianKarlBauer/orientation_averaging_mean_field
+license: MIT
+preferred-citation:
+    type: article
+    authors:
+      - given-names: Julian Karl
+        family-names: Bauer
+        email: juliankarlbauer@gmx.de
+        affiliation: Karlsruhe Institute of Technology
+        orcid: 'https://orcid.org/0000-0002-4931-5869'
+      - given-names: Thomas
+        family-names: Böhlke
+        email: thomas.boehlke@kit.edu
+        affiliation: Karlsruhe Institute of Technology
+        orcid: 'https://orcid.org/0000-0001-6884-0530'
+    title: >-
+      On the dependence of orientation averaging mean
+      field homogenization on planar fourth-order fiber
+      orientation tensors
+    identifiers:
+      - type: doi
+        value: 10.1016/j.mechmat.2022.104307
+    keywords:
+      - Fiber orientation tensor
+      - Anisotropy
+      - Elasticity
+      - Small strain
+      - Mean field homogenization
+      - Fiber reinforced composites
+      - Closure approximation
+    license: CC-BY-4.0
+    journal: "Journal Title"
+    start: 104307
+    volume: 170
+    year: 2022
