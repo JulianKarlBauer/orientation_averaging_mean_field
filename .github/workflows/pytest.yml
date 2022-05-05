@@ -32,11 +32,11 @@ jobs:
         pip install pytest
     - name: Run Pytest against installation
       run: |
-        pytest
+        pytest -vv
 
     - name: Install nbmake
       run: |
         pip install nbmake
     - name: Run Pytest for notebooks
       run: |
-        pytest --nbmake docs/source/notebooks/*ipynb
+        pytest --nbmake docs/source/notebooks/*ipynb -vv
