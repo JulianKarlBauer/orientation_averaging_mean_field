@@ -15,6 +15,9 @@ authors:
     orcid: 'https://orcid.org/0000-0001-6884-0530'
 repository-code: >-
     https://github.com/JulianKarlBauer/orientation_averaging_mean_field
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.5799453
 license: MIT
 preferred-citation:
     type: article
