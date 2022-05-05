@@ -28,6 +28,19 @@ sys.path.insert(
     os.path.abspath(os.path.join(".")),
 )
 
+# -- Project information -----------------------------------------------------
+project = "planarfibers"
+import datetime
+
+year = datetime.datetime.now().year
+
+copyright = f"{year}, Julian Karl Bauer"
+author = "Julian Karl Bauer"
+
+
+# The full version, including alpha/beta/rc tags.
+release = "0.0.1"
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -44,25 +57,24 @@ extensions = [
     # 'numpydoc',
 ]
 
-
-# -- Project information -----------------------------------------------------
-
-
-project = "planarfibers"
-copyright = "2022, Julian Karl Bauer"
-author = "Julian Karl Bauer"
+pygments_style = "sphinx"
 
 
-# The full version, including alpha/beta/rc tags.
-release = "0.0.1"
+source_suffix = ".rst"
+
+# The encoding of source files.
+# source_encoding = 'utf-8-sig'
+
+# The master toctree document.
+master_doc = "index"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -70,12 +82,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-
-
+html_static_path = ["_static"]
