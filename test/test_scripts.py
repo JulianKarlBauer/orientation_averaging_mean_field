@@ -13,7 +13,7 @@ def get_paths_of_scripts():
     exclude_sub_strings = ["do_not_execute"]
     plot_script_paths = glob.glob(
         os.path.join(
-            os.path.dirname(THIS_FILES_DIR_PATH), "examples", "*.py"
+            os.path.dirname(THIS_FILES_DIR_PATH), "docs", "source", "notebooks", "*.py"
         )
     )
     plot_script_paths_sorted = sorted(plot_script_paths)
@@ -27,7 +27,8 @@ def get_paths_of_scripts():
 
 class Test_scripts:
     @pytest.mark.parametrize(
-        "path_script", get_paths_of_scripts(),
+        "path_script",
+        get_paths_of_scripts(),
     )
     def test_execute_scripts(self, path_script):
 
