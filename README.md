@@ -48,8 +48,6 @@ Note: [Develop vs. install](https://stackoverflow.com/a/19048754/8935243)
 
 ## Examples
 
-## Examples
-
 Both example notebooks and example scripts are rendered [here][url_read_the_docs_latest_notebooks] and given as source [here](docs/source/notebooks).
 
 ## Acknowledgment
