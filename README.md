@@ -59,7 +59,8 @@ Note: [Develop vs. install](https://stackoverflow.com/a/19048754/8935243)
 
 ## Examples
 
-Both example notebooks and example scripts are rendered [here][url_read_the_docs_latest_notebooks] and given as source [here](docs/source/notebooks).
+Rendered example notebooks are in [the docs][url_read_the_docs_latest_notebooks].
+These notebooks and corresponding scripts can be found [here][url_docs_source_notebooks].
 
 ## Acknowledgment
 
@@ -80,4 +81,6 @@ The support by the [German Research Foundation (DFG)][dfg_website] is gratefully
 
 [url_read_the_docs_latest]: https://planarfibers.readthedocs.io/en/latest/
 [url_read_the_docs_latest_notebooks]: https://planarfibers.readthedocs.io/en/latest/source/example_notebooks.html
+[url_docs_source_notebooks]: https://github.com/JulianKarlBauer/planarfibers/tree/master/docs/source/notebooks
+
 [url_pypi_this_package]: https://pypi.org/project/planarfibers/
