@@ -170,4 +170,4 @@ for indice in empty_axes_indices:
     ax.axis("off")
 fig.tight_layout()
 
-# # plt.show()
+# plt.show()
