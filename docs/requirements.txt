@@ -6,3 +6,4 @@ mechmean
 pandas
 numpy
 matplotlib
+vofotensors
